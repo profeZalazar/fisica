@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Física — Clase 1 | Prof. Zalazar, Juan</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .welcome {
+    background: linear-gradient(135deg, #fef9c3, #fef3c7);
+    border-left: 5px solid var(--accent-yellow);
+    margin: 1.5rem 1rem;
+    padding: 1.2rem 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 12px rgba(251,191,36,0.2);
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+  .welcome-text { flex: 1; }
+  .welcome-text p { font-size: 1rem; color: #78350f; font-weight: 600; }
+  .welcome-profe {
+    width: 110px;
+    flex-shrink: 0;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.15));
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>⚛️ Física</h1>
+    <p class="subtitle">3° Año — Apuntes de Clase</p>
+    <span class="badge">🧑‍🏫 Prof. Zalazar, Juan</span>
+  </header>
+
+  <a href="../index_3b.html" class="nav-back">← Volver al índice</a>
+
+  <div class="welcome">
+    <div class="welcome-text">
+      <p>👋 En esta clase vas a encontrar los conceptos fundamentales de la Física: qué estudia, los fenómenos y magnitudes físicas, cómo medimos y el sistema de unidades argentino. ¡Arranquemos! 🚀</p>
+    </div>
+    <img src="../images/profe_zalazar.webp" alt="Prof. Zalazar" class="welcome-profe">
+  </div>
+
+<main>
+<p class="section-title">🔭 ¿Qué es la Física?</p>
+  <div class="definition-box">
+    <span class="def-label">Definición</span>
+    <p>LA FÍSICA ES LA CIENCIA NATURAL QUE ESTUDIA LA MATERIA, LA ENERGÍA, EL ESPACIO Y EL TIEMPO, Y CÓMO ESTOS SE RELACIONAN ENTRE SÍ.</p>
+  </div>
+  <div class="explanation">
+    Busca entender y explicar los fenómenos que ocurren en la naturaleza (como el movimiento, la luz, el sonido o la gravedad) sin ocuparse de los cambios en la composición interna de los materiales. <strong>¡Eso lo estudia la Química!</strong>
+  </div>
+
+  <div class="topic-divider"><span>🌊</span></div>
+
+  <p class="section-title">🌦️ Fenómeno Natural</p>
+  <div class="definition-box">
+    <span class="def-label">Definición</span>
+    <p>UN FENÓMENO NATURAL ES TODO CAMBIO O TRANSFORMACIÓN QUE OCURRE EN LA NATURALEZA Y QUE PUEDE SER OBSERVADO Y ESTUDIADO.</p>
+  </div>
+  <div class="explanation">
+    <strong>Por ejemplo:</strong><br>
+    <span class="example-chip">🏃 Movimiento de un objeto</span>
+    <span class="example-chip">🌧️ Caída de la lluvia</span>
+    <span class="example-chip">🌈 Formación de un arco iris</span>
+  </div>
+
+  <div class="topic-divider"><span>📏</span></div>
+
+  <p class="section-title">📐 Magnitud Física</p>
+  <div class="definition-box">
+    <span class="def-label">Definición</span>
+    <p>UNA MAGNITUD FÍSICA ES CUALQUIER PROPIEDAD O CARACTERÍSTICA DE UN OBJETO O FENÓMENO NATURAL QUE PUEDE SER MEDIDA Y CUANTIFICADA.</p>
+  </div>
+  <div class="explanation">
+    <strong>Por ejemplo:</strong><br>
+    <span class="example-chip">📏 Longitud de una mesa</span>
+    <span class="example-chip">🚗 Velocidad de un auto</span>
+    <span class="example-chip">🌡️ Temperatura de un cuerpo</span>
+  </div>
+  <img src="../images/tabla_magnitudes.png" alt="Tabla de magnitudes físicas" class="content-image">
+  <p class="image-caption">Tabla de magnitudes físicas</p>
+
+  <div class="topic-divider"><span>🗂️</span></div>
+
+  <p class="section-title">🗂️ Clasificación de las Magnitudes</p>
+  <div class="classif-card">
+    <h3>🔢 1. Por su ORIGEN</h3>
+    <div class="classif-item">
+      <span class="ci-tag">A</span>
+      <p><strong>Magnitudes Fundamentales:</strong> se definen por sí mismas y <u>no</u> dependen de otras magnitudes. Sirven de base para el resto.<br>
+      <span class="example-chip">metro</span><span class="example-chip">gramo</span><span class="example-chip">segundo</span></p>
+    </div>
+    <div class="classif-item b">
+      <span class="ci-tag b">B</span>
+      <p><strong>Magnitudes Derivadas:</strong> se definen mediante la combinación matemática de dos o más magnitudes fundamentales.<br>
+      <span class="example-chip">m²</span><span class="example-chip">km/h</span></p>
+    </div>
+  </div>
+  <img src="../images/clasificacion_magnitudes.png" alt="Clasificación de magnitudes" class="content-image">
+  <p class="image-caption">Ejemplos de magnitudes fundamentales y derivadas</p>
+
+  <div class="classif-card purple">
+    <h3>🧭 2. Por su NATURALEZA</h3>
+    <div class="classif-item">
+      <span class="ci-tag">A</span>
+      <p><strong>Magnitudes Escalares:</strong> se describen completamente con un valor numérico y una unidad de medida.<br>
+      <span class="example-chip">🌡️ Temperatura: 39°C</span><span class="example-chip">⚖️ Masa: 50 kg</span></p>
+    </div>
+    <div class="classif-item b">
+      <span class="ci-tag b">B</span>
+      <p><strong>Magnitudes Vectoriales:</strong> además del valor y la unidad, necesitan una <strong>dirección</strong> y un <strong>sentido</strong> para estar completamente definidas.<br>
+      <span class="example-chip">💨 Velocidad</span><span class="example-chip">💪 Fuerza</span></p>
+    </div>
+  </div>
+
+  <div class="topic-divider"><span>⚖️</span></div>
+
+  <p class="section-title">📏 ¿Qué es Medir?</p>
+  <div class="definition-box">
+    <span class="def-label">Definición</span>
+    <p>MEDIR ES COMPARAR UNA CIERTA CANTIDAD DE UNA MAGNITUD FÍSICA CON OTRA CANTIDAD DE LA MISMA NATURALEZA, CONOCIDA COMO UNIDAD DE MEDIDA, PARA DETERMINAR CUÁNTAS VECES ESTA UNIDAD ESTÁ CONTENIDA EN DICHA MAGNITUD.</p>
+  </div>
+  <div class="measure-box">
+    <p>💡 Medir es determinar <strong>CUÁNTO</strong> (un número) y <strong>DE QUÉ</strong> (la unidad de medida).</p>
+  </div>
+
+  <p style="margin: 1rem 0 0.5rem; font-weight: 700; color: var(--blue-dark);">🔍 Aspectos que intervienen en toda medición:</p>
+  <div class="aspects-wrapper">
+    <div class="aspects-list">
+      <div class="aspect-item">
+        <span class="ai-icon">🧑‍🔬</span>
+        <div><strong>Observador</strong><p>La persona que realiza la medición.</p></div>
+      </div>
+      <div class="aspect-item">
+        <span class="ai-icon">🔧</span>
+        <div><strong>Instrumento adecuado</strong><p>Cinta métrica, balanza, termómetro, etc.</p></div>
+      </div>
+      <div class="aspect-item">
+        <span class="ai-icon">📦</span>
+        <div><strong>Magnitud a medir</strong><p>Longitud, masa, volumen, etc.</p></div>
+      </div>
+      <div class="aspect-item">
+        <span class="ai-icon">📐</span>
+        <div><strong>Unidad de medida</strong><p>La cantidad de referencia con la que se compara.</p></div>
+      </div>
+    </div>
+    <img src="../images/observador_midiendo.png" alt="Observador midiendo" class="observer-img">
+  </div>
+
+  <div class="topic-divider"><span>🔬</span></div>
+
+  <p class="section-title">🛠️ Instrumentos de Medición</p>
+  <div class="definition-box">
+    <span class="def-label">Definición</span>
+    <p>LOS INSTRUMENTOS DE MEDICIÓN SON DISPOSITIVOS DISEÑADOS PARA CUANTIFICAR Y REGISTRAR LA MAGNITUD DE UNA DETERMINADA PROPIEDAD FÍSICA. SU FUNCIÓN PRINCIPAL ES PROPORCIONAR MEDICIONES PRECISAS Y CONFIABLES.</p>
+  </div>
+  <div class="explanation">
+    Pueden variar en complejidad y precisión: desde simples <strong>reglas</strong> y <strong>termómetros</strong>, hasta <strong>osciloscopios</strong> y <strong>espectrómetros</strong>.
+  </div>
+
+  <div class="topic-divider"><span>❌</span></div>
+
+  <p class="section-title">⚠️ Errores de Medición</p>
+  <div class="definition-box">
+    <span class="def-label">Definición</span>
+    <p>LOS ERRORES DE MEDICIÓN SON DISCREPANCIAS ENTRE EL VALOR MEDIDO Y EL VALOR VERDADERO DE UNA MAGNITUD.</p>
+  </div>
+  <div class="explanation">
+    <strong>Algunos factores que los provocan:</strong>
+    <ul class="error-list">
+      <li>Los <strong>instrumentos</strong>: poco precisos, mal calibrados o dañados.</li>
+      <li>La <strong>cantidad de materia</strong>: demasiado pequeña o grande, su forma, etc.</li>
+      <li>El <strong>observador</strong>: lectura incorrecta, confundir valores o unidades.</li>
+      <li>Las <strong>condiciones ambientales</strong>: iluminación, temperatura, vibraciones.</li>
+    </ul>
+  </div>
+  <div class="tip-box">
+    💡 <strong>¿Cómo reducir el error?</strong> Repitiendo la medición la mayor cantidad de veces posible y calculando el <strong>valor promedio</strong>:
+    <img src="../images/formula_promedio.png" alt="Fórmula del valor promedio" class="formula-img">
+  </div>
+
+  <div class="topic-divider"><span>🇦🇷</span></div>
+
+  <p class="section-title">🇦🇷 El SIMELA</p>
+  <div class="simela-box">
+    <span class="def-label">Definición</span>
+    <p>EL SIMELA O SISTEMA MÉTRICO LEGAL ARGENTINO ES EL SISTEMA DE UNIDADES VIGENTE EN ARGENTINA, DE USO OBLIGATORIO. FUE ESTABLECIDO EN 1972.</p>
+    <p class="simela-note">Está constituido por las unidades, múltiplos y submúltiplos, prefijos y símbolos del <strong>S.I. (Sistema Internacional de Unidades)</strong>.</p>
+  </div>
+</main>
+
+  <footer>
+    <p>⚛️ <strong>Física — 3° Año</strong> &nbsp;|&nbsp; <strong>Prof. Zalazar, Juan</strong></p>
+    <p style="margin-top:0.4rem; font-size:0.8rem;">Material de estudio — <a href="../index_3b.html" style="color:var(--blue-mid); font-weight:700;">← Volver al índice</a></p>
+  </footer>
+
+</body>
+</html>
