@@ -6,12 +6,17 @@
 <title>Física | Prof. Zalazar, Juan</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-  /* ── ESTILOS EXCLUSIVOS DEL INDEX ── */
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 
+  /* HERO */
   .hero {
     position: relative;
     text-align: center;
-    padding: 3rem 1.5rem 5rem;
+    padding: 3rem 1.5rem 3.5rem;
     overflow: hidden;
     background: linear-gradient(135deg, var(--blue-dark) 0%, #2563eb 60%, #7c3aed 100%);
     color: white;
@@ -32,20 +37,17 @@
     background: rgba(255,255,255,0.04);
     border-radius: 50%;
   }
-
-  /* MARCA DE AGUA */
   .watermark {
     position: absolute;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 220px;
-    opacity: 0.18;
+    width: 200px;
+    opacity: 0.15;
     pointer-events: none;
     z-index: 0;
     animation: float 4s ease-in-out infinite;
   }
-
   .hero-content {
     position: relative;
     z-index: 1;
@@ -58,7 +60,7 @@
     margin-bottom: 0.3rem;
   }
   .hero .hero-sub {
-    font-size: 1.1rem;
+    font-size: 1rem;
     opacity: 0.85;
     font-weight: 600;
     margin-bottom: 0.6rem;
@@ -74,186 +76,131 @@
     backdrop-filter: blur(4px);
   }
 
-  /* BIENVENIDA */
-  .bienvenida {
-    max-width: 700px;
-    margin: 2rem auto 0;
-    background: linear-gradient(135deg, #fef9c3, #fef3c7);
-    border-left: 5px solid var(--accent-yellow);
-    border-radius: var(--radius);
-    padding: 1.2rem 1.8rem;
-    box-shadow: 0 2px 12px rgba(251,191,36,0.2);
-    font-size: 1rem;
-    color: #78350f;
-    font-weight: 600;
-  }
-
-  /* CARRUSEL */
-  .carousel-section {
-    max-width: 900px;
-    margin: 2.5rem auto;
-    padding: 0 1rem;
-  }
-  .carousel-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--blue-dark);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1.2rem;
-    text-align: center;
-  }
-  .carousel-wrapper {
-    position: relative;
-  }
-  .carousel-track-container {
-    overflow: hidden;
-    border-radius: var(--radius);
-  }
-  .carousel-track {
-    display: flex;
-    gap: 1rem;
-    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
-    will-change: transform;
-  }
-
-  /* TARJETAS */
-  .clase-card {
-    flex: 0 0 calc(50% - 0.5rem);
-    background: white;
-    border-radius: var(--radius);
-    box-shadow: 0 6px 24px rgba(37,99,235,0.13);
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s, box-shadow 0.2s;
+  /* SELECCIÓN DE CURSO */
+  .course-section {
+    flex: 1;
     display: flex;
     flex-direction: column;
-  }
-  .clase-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.3);
-  }
-  .clase-card .card-img {
-    width: 100%;
-    height: 130px;
-    object-fit: cover;
-    display: block;
-  }
-  .clase-card .card-img-placeholder {
-    width: 100%;
-    height: 130px;
-    display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3.5rem;
+    padding: 2.5rem 1.5rem 3rem;
+    gap: 1.5rem;
   }
-  .clase-card .card-body {
-    padding: 1rem 1.2rem 1.3rem;
-    flex: 1;
-  }
-  .clase-card .card-num {
-    font-size: 0.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 0.3rem;
-  }
-  .clase-card .card-title {
+  .course-heading {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    color: var(--text-dark);
-    line-height: 1.3;
-    margin-bottom: 0.5rem;
-  }
-  .clase-card .card-topics {
-    font-size: 0.8rem;
     color: var(--text-mid);
-    line-height: 1.5;
-  }
-  .clase-card .card-btn {
-    display: block;
-    margin-top: 0.9rem;
-    padding: 0.4rem 0.9rem;
-    border-radius: 50px;
-    font-size: 0.78rem;
-    font-weight: 800;
-    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     text-align: center;
   }
 
-  /* Colores por clase */
-  .card-c1 { border-top: 4px solid #2563eb; }
-  .card-c1 .card-img-placeholder { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
-  .card-c1 .card-num { color: #2563eb; }
-  .card-c1 .card-btn { background: #2563eb; }
-
-  .card-c2 { border-top: 4px solid #7c3aed; }
-  .card-c2 .card-img-placeholder { background: linear-gradient(135deg, #ede9fe, #ddd6fe); }
-  .card-c2 .card-num { color: #7c3aed; }
-  .card-c2 .card-btn { background: #7c3aed; }
-
-  .card-c3 { border-top: 4px solid #059669; }
-  .card-c3 .card-img-placeholder { background: linear-gradient(135deg, #d1fae5, #a7f3d0); }
-  .card-c3 .card-num { color: #059669; }
-  .card-c3 .card-btn { background: #059669; }
-
-  .card-c4 { border-top: 4px solid #f97316; }
-  .card-c4 .card-img-placeholder { background: linear-gradient(135deg, #ffedd5, #fed7aa); }
-  .card-c4 .card-num { color: #f97316; }
-  .card-c4 .card-btn { background: #f97316; }
-
-  .card-c5 { border-top: 4px solid #ec4899; }
-  .card-c5 .card-img-placeholder { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
-  .card-c5 .card-num { color: #ec4899; }
-  .card-c5 .card-btn { background: #ec4899; }
-
-  /* BOTONES CARRUSEL */
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: white;
-    border: 2px solid var(--blue-light);
-    color: var(--blue-mid);
-    font-size: 1.1rem;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
-    z-index: 10;
+  /* BOTONES DE CURSO */
+  .course-buttons {
     display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 400px;
+    align-items: center;
+  }
+
+  .course-btn {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s;
-  }
-  .carousel-btn:hover { background: var(--blue-pale); border-color: var(--blue-mid); }
-  .carousel-btn.prev { left: -18px; }
-  .carousel-btn.next { right: -18px; }
-
-  /* DOTS */
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
     gap: 0.5rem;
-    margin-top: 1.2rem;
+    width: 100%;
+    max-width: 340px;
+    padding: 1.6rem 2rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.15);
   }
-  .dot {
-    width: 8px; height: 8px;
+  .course-btn::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 120px; height: 120px;
+    background: rgba(255,255,255,0.1);
     border-radius: 50%;
-    background: #cbd5e1;
-    cursor: pointer;
-    transition: all 0.2s;
   }
-  .dot.active { background: var(--blue-mid); width: 22px; border-radius: 4px; }
+  .course-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+  }
+  .course-btn:active { transform: translateY(-2px); }
 
-  @media (max-width: 500px) {
-    .clase-card { flex: 0 0 85%; }
-    .carousel-btn.prev { left: -10px; }
-    .carousel-btn.next { right: -10px; }
-    .watermark { width: 160px; }
+  .course-btn .btn-year {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    font-weight: 900;
+    color: white;
+    letter-spacing: -1px;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+  }
+  .course-btn .btn-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.85);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+  .course-btn .btn-arrow {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.7);
+    position: relative;
+    z-index: 1;
+    margin-top: 0.3rem;
+  }
+
+  .btn-1b {
+    background: linear-gradient(135deg, #059669 0%, #10b981 60%, #34d399 100%);
+  }
+  .btn-3b {
+    background: linear-gradient(135deg, var(--blue-dark) 0%, #2563eb 60%, #7c3aed 100%);
+  }
+
+  /* PORTRAIT: botones en columna (ya es default), LANDSCAPE: en fila */
+  @media (orientation: landscape) and (max-height: 600px) {
+    .course-buttons {
+      flex-direction: row;
+      max-width: 700px;
+    }
+    .course-btn {
+      max-width: 300px;
+    }
+  }
+
+  /* Pantallas grandes: en fila también */
+  @media (min-width: 700px) {
+    .course-buttons {
+      flex-direction: row;
+      max-width: 720px;
+      justify-content: center;
+    }
+    .course-btn {
+      max-width: 300px;
+      flex: 1;
+    }
+  }
+
+  .divider-note {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    text-align: center;
+    max-width: 320px;
+    line-height: 1.6;
   }
 </style>
 </head>
@@ -263,121 +210,34 @@
   <img src="images/profe_zalazar.webp" alt="" class="watermark">
   <div class="hero-content">
     <h1>⚛️ Física</h1>
-    <p class="hero-sub">3° Año — Apuntes y Guías de Estudio</p>
+    <p class="hero-sub">Apuntes y Guías de Estudio</p>
     <span class="hero-badge">🧑‍🏫 Prof. Zalazar, Juan</span>
   </div>
 </div>
 
-<div style="max-width:700px; margin: 1.5rem auto 0; padding: 0 1rem;">
-  <div class="bienvenida">
-    👋 ¡Bienvenidos! Acá van a encontrar todo el material de Física organizado por clases. Hacé clic en la clase que quieras estudiar. ¡Éxito! 🚀
+<div class="course-section">
+  <p class="course-heading">📚 Seleccioná tu curso</p>
+
+  <div class="course-buttons">
+    <a href="index_1b.html" class="course-btn btn-1b">
+      <span class="btn-year">1ro B</span>
+      <span class="btn-label">Primer Año</span>
+      <span class="btn-arrow">Ver clases →</span>
+    </a>
+    <a href="index_3b.html" class="course-btn btn-3b">
+      <span class="btn-year">3ro B</span>
+      <span class="btn-label">Tercer Año</span>
+      <span class="btn-arrow">Ver clases →</span>
+    </a>
   </div>
-</div>
 
-<!-- CARRUSEL -->
-<div class="carousel-section">
-  <p class="carousel-title">📚 Clases disponibles</p>
-  <div class="carousel-wrapper">
-    <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#8592;</button>
-    <div class="carousel-track-container">
-      <div class="carousel-track" id="carouselTrack">
-
-        <!-- CLASE 1 -->
-        <a href="clase1.html" class="clase-card card-c1">
-          <div class="card-img-placeholder">🔭</div>
-          <div class="card-body">
-            <p class="card-num">Clase 1</p>
-            <p class="card-title">Introducción a la Física</p>
-            <p class="card-topics">¿Qué es la Física? · Fenómenos naturales · Magnitudes físicas · Medición · Errores · SIMELA</p>
-            <span class="card-btn">Ver clase →</span>
-          </div>
-        </a>
-
-        <!-- CLASE 2 -->
-        <a href="clase2.html" class="clase-card card-c2">
-          <div class="card-img-placeholder">📊</div>
-          <div class="card-body">
-            <p class="card-num">Clase 2</p>
-            <p class="card-title">Sistema Internacional de Unidades</p>
-            <p class="card-topics">Unidades de base y derivadas · Múltiplos y submúltiplos · Longitud · Masa · Tiempo · Volumen y Capacidad</p>
-            <span class="card-btn">Ver clase →</span>
-          </div>
-        </a>
-
-        <!-- CLASE 3 (próximamente) -->
-        <div class="clase-card card-c3" style="opacity:0.5; cursor:not-allowed;">
-          <div class="card-img-placeholder">🔬</div>
-          <div class="card-body">
-            <p class="card-num">Clase 3</p>
-            <p class="card-title">Próximamente...</p>
-            <p class="card-topics">El contenido de esta clase estará disponible pronto.</p>
-            <span class="card-btn" style="background:#94a3b8;">En preparación</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <button class="carousel-btn next" onclick="moveCarousel(1)">&#8594;</button>
-  </div>
-  <div class="carousel-dots" id="carouselDots"></div>
+  <p class="divider-note">Ingresá al índice de tu curso para acceder al material de cada clase 🎓</p>
 </div>
 
 <footer>
-  <p>⚛️ <strong>Física — 3° Año</strong> &nbsp;|&nbsp; <strong>Prof. Zalazar, Juan</strong></p>
+  <p>⚛️ <strong>Física</strong> &nbsp;|&nbsp; <strong>Prof. Zalazar, Juan</strong></p>
   <p style="margin-top:0.4rem; font-size:0.8rem;">Material de estudio 🎓</p>
 </footer>
-
-<script>
-  const track = document.getElementById('carouselTrack');
-  const cards = track.querySelectorAll('.clase-card, div.clase-card');
-  const dotsContainer = document.getElementById('carouselDots');
-  let current = 0;
-  let cardWidth = 0;
-  let visible = 2;
-
-  function getVisible() {
-    return window.innerWidth <= 500 ? 1 : 2;
-  }
-
-  function buildDots() {
-    dotsContainer.innerHTML = '';
-    const total = cards.length - getVisible() + 1;
-    for (let i = 0; i < total; i++) {
-      const d = document.createElement('div');
-      d.className = 'dot' + (i === current ? ' active' : '');
-      d.onclick = () => goTo(i);
-      dotsContainer.appendChild(d);
-    }
-  }
-
-  function updateDots() {
-    document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i === current));
-  }
-
-  function goTo(n) {
-    const total = cards.length - getVisible() + 1;
-    current = (n + total) % total;
-    const gap = 16;
-    cardWidth = cards[0].offsetWidth + gap;
-    track.style.transform = `translateX(-${current * cardWidth}px)`;
-    updateDots();
-  }
-
-  function moveCarousel(dir) {
-    goTo(current + dir);
-  }
-
-  window.addEventListener('resize', () => { current = 0; buildDots(); goTo(0); });
-  window.addEventListener('load', () => { buildDots(); goTo(0); });
-
-  // Touch/swipe
-  let startX = 0;
-  track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-  track.addEventListener('touchend', e => {
-    const diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) moveCarousel(diff > 0 ? 1 : -1);
-  });
-</script>
 
 </body>
 </html>
